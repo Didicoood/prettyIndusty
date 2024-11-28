@@ -108,6 +108,10 @@ export const routes = [
     }]
   },
   {
+    path: '/cardAdd',
+    component: () => import('@/views/Car/car-card/add-card')
+  },
+  {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
