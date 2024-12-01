@@ -29,6 +29,7 @@ export default {
     logout() {
       this.$store.commit('user/clearUserInfo')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      this.$store.commit('menu/resetMenu')
     }
   }
 }

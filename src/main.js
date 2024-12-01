@@ -18,6 +18,17 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
+// 管理员权限特殊处理
+const adminPerms = '*:*:*'
+Vue.directive('auth-btn', {
+  inserted(el, data) {
+    // 在vuex拿到权限
+    const perms = store.state.user.profile.permissions
+    if (!perms.includes(data.value) && !perms.includes(adminPerms)) {
+      el.remove()
+    }
+  }
+})
 // vue实例化
 new Vue({
   el: '#app',

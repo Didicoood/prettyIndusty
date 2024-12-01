@@ -13,3 +13,10 @@ export function loginAPI(data) {
     data
   })
 }
+
+export const getProfileAPI = () => {
+  return request({
+    url: '/park/user/profile',
+    method: 'GET'
+  })
+}

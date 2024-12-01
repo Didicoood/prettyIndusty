@@ -29,6 +29,8 @@ export default {
   computed: {
     routes() {
       return this.$router.options.routes
+
+      // return this.$store.state.menu.menuList
     },
     activeMenu() {
       const route = this.$route
@@ -39,6 +41,9 @@ export default {
       }
       return path
     }
+  },
+  mounted() {
+    console.log(this.$store.state.menu.menuList)
   }
 }
 </script>
